@@ -1,0 +1,65 @@
+{% extends "base.html.twig" %}
+{% import 'macros.html.twig' as macros %}
+
+{% block title %}{{ 'Permissions'|trans }} | BRT solutions{% endblock %}
+
+{# Override form elements. #}
+{% form_theme form with ['form/multi-check-boxes.html.twig'] %}
+
+{% block content %}
+
+    {% include "components/tabs/roles.html.twig" with {
+        type: 'permissions'
+    } %}
+
+
+    {{ form_errors(form) }}
+
+    {{ form_start(form) }}
+    <table>
+        <thead>
+        <th>{{ 'Permission'|trans }}</th>
+
+        {% for role in roles %}
+            <th>{{ (role.title is empty)? role.role : role.title }}</th>
+        {% endfor %}
+
+        </thead>
+
+        <tbody>
+
+        {% set info = '' %}
+        {% for item in form.permissions %}
+
+            {# Add domain info #}
+            {% if info != item.vars.value.getDomain() %}
+
+                {% set info = item.vars.value.getDomain() %}
+                <tr>
+                    <td colspan="{{ roles|length + 1 }}">
+                        <div><strong>{{ item.vars.value.getDomain() }}</strong></div>
+                        <div class="description">{{ item.vars.value.getDomainDescription() }}</div>
+                    </td>
+                </tr>
+            {% endif %}
+
+            {# Add permission #}
+            <tr>
+                <td>
+                    <div class="permission">
+                        <span class="title">{{ item.vars.value.getName() }}</span>
+                        <span class="description">{{ item.vars.value.getDescription() }}</span>
+                    </div>
+                </td>
+
+                {{ form_widget(item) }}
+            </tr>
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    {{ form_end(form) }}
+
+{% endblock %}

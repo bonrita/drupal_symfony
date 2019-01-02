@@ -1,0 +1,6 @@
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link {{ type == 'view'? 'active' : '' }}" id="nav-login-tab" data-toggle="tab" href="{{ path('user_page_user_view', {'_locale': app.request.attributes.get('_locale'), 'user': user}) }}" role="tab" aria-controls="nav-login" aria-selected="true">{{ 'View'|trans }}</a>
+        <a class="nav-item nav-link  {{ type == 'edit'? 'active' : '' }}" id="nav-register-tab" data-toggle="tab" href="{{ path('user_page_user_edit', {'_locale': app.request.attributes.get('_locale'), 'user': user}) }}" role="tab" aria-controls="nav-profile" aria-selected="false">{{ 'Edit'|trans }}</a>
+    </div>
+</nav>

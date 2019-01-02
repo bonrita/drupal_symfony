@@ -1,0 +1,26 @@
+default:
+    suites:
+        default:
+            contexts:
+                - FeatureContext:
+                    kernel: '@kernel'
+#                - Behat\MinkExtension\Context\MinkContext
+                - behatch:context:json
+                - behatch:context:rest
+
+    extensions:
+        Behat\Symfony2Extension:
+            kernel:
+                bootstrap: features/bootstrap/bootstrap.php
+                class: App\Kernel
+
+        Behat\MinkExtension:
+            browser_name: chrome
+            goutte: ~
+            selenium2: ~
+            base_url: "http://dev.drupal-symfony.com/"
+#            base_url: "http://docker-drup-symf.local"
+            sessions:
+                default:
+                    symfony2: ~
+        Behatch\Extension: ~

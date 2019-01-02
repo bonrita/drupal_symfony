@@ -1,0 +1,82 @@
+{%- block table_widget -%}
+
+    {#{%- if widget == 'single_text' -%}#}
+    {#{{- block('form_widget_simple') -}}#}
+    {#{%- else -%}#}
+    {#<div {{ block('widget_container_attributes') }}>#}
+    {#{{- form_errors(form) -}}#}
+    {#<table class="{{ table_class|default('') }}" role="presentation">#}
+    {#<thead>#}
+    {#<tr>#}
+    {#{%- if with_years %}<th>{{ form_label(form.years) }}</th>{% endif -%}#}
+    {#{%- if with_months %}<th>{{ form_label(form.months) }}</th>{% endif -%}#}
+    {#{%- if with_weeks %}<th>{{ form_label(form.weeks) }}</th>{% endif -%}#}
+    {#{%- if with_days %}<th>{{ form_label(form.days) }}</th>{% endif -%}#}
+    {#{%- if with_hours %}<th>{{ form_label(form.hours) }}</th>{% endif -%}#}
+    {#{%- if with_minutes %}<th>{{ form_label(form.minutes) }}</th>{% endif -%}#}
+    {#{%- if with_seconds %}<th>{{ form_label(form.seconds) }}</th>{% endif -%}#}
+    {#</tr>#}
+    {#</thead>#}
+    {#<tbody>#}
+    {#<tr>#}
+    {#{{ dump() }}#}
+    {#{{ dump(form) }}#}
+
+
+
+    {#{{ form_widget(form.username_0) }}#}
+    {#{{ form_widget(form.username_1) }}#}
+
+    {#{{ form_widget(form.status_0) }}#}
+    {#{{ form_widget(form.status_1) }}#}
+
+
+
+    {#{% for field in form.parent.vars.table_fields %}#}
+
+    {#{% for user in form.parent.vars.table_content %}#}
+
+    {#<tr>{{ user.username }}</tr>#}
+    {#{% set field_name = field~'_'~user.id %}#}
+    {#{{ field_name }}#}
+    {#{{ form_widget(form.{field_name}) }}#}
+    {#{% endfor %}#}
+
+
+    {#{% endfor %}#}
+
+    {#{{ form_widget(form.username) }}#}
+    {#{{ form_widget(form.status) }}#}
+    {#{{ form_widget(form.roles) }}#}
+    {#{%- if with_years %}<td>{{ form_widget(form.years) }}</td>{% endif -%}#}
+    {#{%- if with_months %}<td>{{ form_widget(form.months) }}</td>{% endif -%}#}
+    {#{%- if with_weeks %}<td>{{ form_widget(form.weeks) }}</td>{% endif -%}#}
+    {#{%- if with_days %}<td>{{ form_widget(form.days) }}</td>{% endif -%}#}
+    {#{%- if with_hours %}<td>{{ form_widget(form.hours) }}</td>{% endif -%}#}
+    {#{%- if with_minutes %}<td>{{ form_widget(form.minutes) }}</td>{% endif -%}#}
+    {#{%- if with_seconds %}<td>{{ form_widget(form.seconds) }}</td>{% endif -%}#}
+    {#</tr>#}
+    {#</tbody>#}
+    {#</table>#}
+    {#{%- if with_invert %}{{ form_widget(form.invert) }}{% endif -%}#}
+    {#</div>#}
+    {#{%- endif -%}#}
+{%- endblock table_widget -%}
+
+
+{%- block markup_widget -%}
+    {{ data|capitalize }}
+{%- endblock markup_widget -%}
+
+{%- block link_widget -%}
+    {#{{ dump() }}#}
+    <a class="{{ attr.class is defined? attr.class : '' }}" href="{{ data.href }}">{{ data.title|capitalize }}</a>
+{%- endblock link_widget -%}
+
+{%- block list_widget -%}
+    <ul>
+        {% for item in data %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+{%- endblock list_widget -%}

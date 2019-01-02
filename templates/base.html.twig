@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+    {% endblock %}
+
+    {% block javascripts_header %}{% endblock %}
+</head>
+<body>
+
+
+<div id="page">
+
+    <header id="header">
+        <div class="section layout-container">
+            {% include 'components/region-header-top.html.twig' %}
+
+            {% include 'components/logo.html.html.twig' %}
+
+            {% include 'components/primary-menu.html.twig' %}
+        </div>
+    </header>
+
+    {% include 'components/block-flash.html.twig' %}
+
+    <div id="main-wrapper" class="layout-container">
+
+        <div id="main">
+            {#{% include 'sidebar-left.html.twig' %}#}
+
+            <main id="content" class="main-content">{% block content %}{% endblock %}</main>
+
+            <div id="sidebar-left" class="sidebar">
+                <aside class="section">
+                    {% block sidebar_left %}
+                        {{ render(controller('App\\Web\\Controller\\SideBlocks::searchForm')) }}
+                    {% endblock %}
+                </aside>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% block javascripts %}
+    <!-- These two files will now be included on every page. -->
+    <script src="{{ asset('build/manifest.js') }}"></script>
+    <script src="{{ asset('build/app.js') }}"></script>
+{% endblock %}
+
+</body>
+</html>

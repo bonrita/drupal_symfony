@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="global">
+        <body>
+            <trans-unit id="home" resname="messages.home.home">
+                <source>Home</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="user_register" resname="messages.user.register">
+                <source>Create new account</source>
+                <target>Create new account</target>
+            </trans-unit>
+            <trans-unit id="user_password" resname="messages.user.password">
+                <source>messages.user.password</source>
+                <target>Reset your password</target>
+            </trans-unit>
+            <trans-unit id="user_password_reset_here" resname="messages.user.password.reset.here">
+                <source>messages.user.password.reset.here</source>
+                <target>Reset your password from here.</target>
+            </trans-unit>
+            <trans-unit id="user_email_sent" resname="messages.user.email.sent">
+                <source>messages.user.email.sent</source>
+                <target>An email has been sent to %email%. You have 24 hours to activate your account before the link expires.</target>
+            </trans-unit>
+            <trans-unit id="user_password_email_sent" resname="messages.user.password.email.sent">
+                <source>messages.user.password.email.sent</source>
+                <target>Further instructions have been sent to your email address.</target>
+            </trans-unit>
+            <trans-unit id="user_already_used_one_time_login_link" resname="messages.user.already_used_one_time_login_link">
+                <source>messages.user.already_used_one_time_login_link</source>
+                <target>You have tried to use a one-time login link that has expired. Please request a new one using the form below.</target>
+            </trans-unit>
+            <trans-unit id="user_just_used_one_time_login_link" resname="messages.user.just_used_one_time_login_link">
+                <source>messages.user.just_used_one_time_login_link</source>
+                <target>You have just used your one-time login link. It is no longer necessary to use this link to log in. Please change your password.</target>
+            </trans-unit>
+            <trans-unit id="login_link_already_used" resname="messages.login.link.already.used">
+                <source>messages.link.already.used</source>
+                <target>You already logged in with this link. Hence it is expired. You may request for a new password from here.</target>
+            </trans-unit>
+            <trans-unit id="login_link_expired" resname="messages.login.link.expired">
+                <source>messages.login.link.expired</source>
+                <target>One time login link expired.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,47 @@
+
+{% import _self as selfMacros %}
+
+<table {{ selfMacros.render_attb(options['table_attr']) }}>
+    <thead>
+    <tr>
+        {% for column in columns %}
+            <th>
+                {#{% if column.field == 'name' %}#}
+                    {#Machine name#}
+                {% if column.field == 'id' %}
+                     {#Don't render label#}
+                {% else %}
+                    {{ column.getLabel() }}
+                {% endif %}
+            </th>
+        {% endfor %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for record in records %}
+        {#{{ dump(record) }}#}
+        <tr>
+            {% for column in columns %}
+                {#{{ dump(column) }}#}
+                <td>
+                    {{ column.format(record, source) | raw }}
+
+                    {% if column.field == 'title' %}
+                        <p>
+                            <small>{{ record.description }}</small>
+                        </p>
+                    {% endif %}
+                </td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% macro render_attb(attributes) %}
+    {% spaceless %}
+        {% for attb, value in attributes %}
+            {{ attb }}="{{ value }}"
+        {% endfor %}
+    {% endspaceless %}
+{% endmacro %}

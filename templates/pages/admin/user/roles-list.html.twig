@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+{% import 'macros.html.twig' as macros %}
+
+{% block title %}{{ 'Roles'|trans }} | BRT solutions{% endblock %}
+
+
+{% block content %}
+
+    {% include "components/tabs/roles.html.twig" with {
+        type: 'roles'
+    } %}
+
+    <p>
+        A role defines a group of users that have certain privileges. These privileges are defined on the Permissions
+        page. Here, you can define the names and the display sort order of the roles on your site. It is recommended
+        to order roles from least permissive (for example, Anonymous user) to most permissive
+        (for example, Administrator user). Users who are not logged in have the Anonymous user role. Users who are
+        logged in have the Authenticated user role, plus any other roles granted to their user account.
+    </p>
+
+    <div><a class="btn btn-primary"
+            href="{{ path('user_admin_roles_add', {'_locale': app.request.attributes.get('_locale')}) }}"
+            role="button">{{ 'Add role'|trans }}</a></div>
+
+
+    {{ dtc_grid.render | raw }}
+
+{% endblock %}

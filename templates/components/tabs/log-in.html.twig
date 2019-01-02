@@ -1,0 +1,7 @@
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link {{ type == 'login'? 'active' : '' }}" id="nav-login-tab" data-toggle="tab" href="{{ path('user_page_login', {'_locale': app.request.attributes.get('_locale')}) }}" role="tab" aria-controls="nav-login" aria-selected="true">{{ 'Log in'|trans }}</a>
+        <a class="nav-item nav-link  {{ type == 'register'? 'active' : '' }}" id="nav-register-tab" data-toggle="tab" href="{{ path('user_page_register', {'_locale': app.request.attributes.get('_locale')}) }}" role="tab" aria-controls="nav-profile" aria-selected="false">{{ 'messages.user.register'|trans }}</a>
+        <a class="nav-item nav-link {{ type == 'reset'? 'active' : '' }}" id="nav-reset-tab" data-toggle="tab" href="{{ path('user_page_pass', {'_locale': app.request.attributes.get('_locale')}) }}" role="tab" aria-controls="nav-contact" aria-selected="false">{{ 'messages.user.password'|trans }}</a>
+    </div>
+</nav>

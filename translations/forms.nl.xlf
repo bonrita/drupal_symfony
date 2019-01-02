@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="nl" datatype="plaintext" original="global">
+        <body>
+            <trans-unit id="search" resname="forms.search">
+                <source>Search</source>
+                <target>Zoeken</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

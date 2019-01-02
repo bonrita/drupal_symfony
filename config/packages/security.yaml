@@ -1,0 +1,57 @@
+security:
+    encoders:
+        App\Domain\Entity\User: bcrypt
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        local_db_provider:
+            entity:
+                class: App\Domain\Entity\User
+#                https://symfony.com/doc/current/security/entity_provider.html#using-a-custom-query-to-load-the-user
+#                property: username
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        reset_password:
+            context: reset_pass
+            pattern: ^/user/reset/password
+            guard:
+                authenticators:
+                    - App\Infrastructure\Security\Authentication\ResetPasswordAuthenticator
+#            user_checker: App\Security\User\UserChecker
+        one_time_login:
+            context: reset_pass
+            passwordreset:
+                provider_key: local_db_provider
+            pattern: ^/user/reset/\d+/*
+#            user_checker: App\Security\User\UserChecker
+#            access_denied_handler: App\Security\Handler\AccessDeniedHandler
+
+        main:
+            anonymous: true
+            guard:
+                authenticators:
+                    - App\Infrastructure\Security\Authentication\LoginFormAuthenticator
+            logout:
+                path: /user/logout
+
+#            form_login:
+#                login_path: user/login
+#                check_path: user/login
+            # activate different ways to authenticate
+
+            # http_basic: true
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: true
+            # https://symfony.com/doc/current/security/form_login_setup.html
+
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+#        - { path: ^/user/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#         - { path: ^/user/reset/\d+/*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#         - { path: ^/user/reset/password, roles: IS_AUTHENTICATED_REMEMBERED }
+        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }

@@ -1,0 +1,6 @@
+public:
+    resource: ../../src/Web/Controller/
+    type: annotation
+    prefix:
+        en: ''
+        nl: '/nl'

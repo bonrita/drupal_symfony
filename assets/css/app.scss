@@ -1,0 +1,333 @@
+$background-color: #fff;
+$header-text-color: #fffeff;
+$black-color: #333;
+
+// the ~ allows you to reference things in node_modules
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  background-color: $background-color;
+  min-height: 100%;
+  line-height: 1.5;
+  word-wrap: break-word;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 87.5%;
+  color: #3b3b3b;
+  margin: 0;
+}
+
+h1 {
+  margin: 1em 0 0.5em;
+  font-weight: inherit;
+  font-size: 1.357em;
+  color: #000;
+}
+
+.page-title {
+  font-size: 2em;
+  line-height: 1em;
+}
+
+main {
+  display: block;
+}
+
+label {
+  display: table;
+  font-weight: bold;
+}
+
+label[for] {
+  cursor: pointer;
+}
+
+.main-content {
+  float: left;
+  position: relative;
+  width: 75%;
+  margin-left: 25%;
+  margin-right: 0;
+}
+
+.layout-container {
+  max-width: 1290px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.region-highlighted {
+  margin: 0 15px;
+}
+
+.messages__wrapper {
+  padding: 20px 0 5px 8px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 8px 0;
+}
+
+.messages {
+  background: no-repeat 10px 17px;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: none;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: none;
+  border: 1px solid;
+  border-top-color: currentcolor;
+  border-top-width: 1px;
+  border-right-color: currentcolor;
+  border-right-width: 1px;
+  border-bottom-color: currentcolor;
+  border-bottom-width: 1px;
+  border-left-color: currentcolor;
+  border-left-width: 1px;
+  border-top-color: currentcolor;
+  border-top-width: 1px;
+  border-right-color: currentcolor;
+  border-right-width: 1px;
+  border-bottom-color: currentcolor;
+  border-bottom-width: 1px;
+  border-left-color: currentcolor;
+  border-left-width: 1px;
+  border-width: 1px 1px 1px 0;
+  border-radius: 2px;
+  padding: 15px 20px 15px 35px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.messages--error {
+  background-color: #fcf4f2;
+  color: #a51b00;
+  background-image: url(images/error.svg);
+  border-color: #f9c9bf #f9c9bf #f9c9bf transparent;
+  box-shadow: -8px 0 0 #e62600;
+}
+
+.messages--success {
+  background-color: #fcf4f2;
+  color: #1ba55e;
+  border-color: #d0f9bd #d0f9bd #d0f9bd transparent;
+  box-shadow: -8px 0 0 #1ee600;
+}
+
+#region-header-top {
+  //width: 100%;
+  //clear: both;
+
+  #language-switcher {
+    float: left;
+    width: 50%;
+
+    li {
+      list-style: none;
+      display: inline-block;
+      a {
+        color: $header-text-color;
+        text-decoration: none;
+
+      }
+    }
+
+  }
+
+  #secondary-menu {
+    float: left;
+    width: 50%;
+
+    .menu {
+      text-align: right;
+      margin: 0 10px 0 10px;
+      padding: 0;
+      list-style: none;
+
+      .menu-item {
+        a {
+          color: $header-text-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+}
+
+#header {
+  background-color: #1d84c3;
+  background-image: linear-gradient(to bottom, #17a2b8 0%, #1d84c3 100%);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  .section {
+    position: relative;
+  }
+}
+
+#header, nav {
+  display: block;
+}
+
+#region-logo {
+  color: $header-text-color;
+  padding: 0.357em 15px 0;
+  width: 100%;
+  float: left;
+
+  #logo {
+    float: left;
+
+    #site-logo {
+      margin: 0 1em 0.286em 0;
+
+      img {
+        width: 20%;
+      }
+    }
+
+    .branding-text {
+      margin: 0 0 1.857em;
+      padding: 1.286em 0 0;
+      display: inline-block;
+      vertical-align: top;
+
+      a {
+        text-decoration: none;
+        color: $header-text-color;
+        font-size: 1.821em;
+      }
+    }
+  }
+
+}
+
+#primary-menu {
+  clear: both;
+  overflow: auto;
+  nav {
+    display: block;
+
+    ul {
+      font-size: 0.929em;
+      padding: 0 15px;
+      margin: 0;
+      text-align: left;
+
+      li {
+        float: left;
+        list-style: none;
+        padding: 0 1px;
+        margin: 0 1px;
+        width: auto;
+        height: auto;
+        a {
+          text-decoration: none;
+          padding: 0.7em 0.8em;
+          border-radius: 8px 8px 0 0;
+          text-shadow: 0 1px #eee;
+          display: block;
+          background: rgba(255, 255, 255, 0.7);
+          color: $black-color;
+        }
+      }
+
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+aside {
+  display: block;
+}
+
+#main {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  position: relative;
+
+  .sidebar {
+    .block {
+      background-color: #f6f6f2;
+      border: 1px solid #f9f9f9;
+      padding: 15px 20px;
+      margin: 0 0 20px;
+    }
+
+    h2 {
+      margin: 0 0 0.5em;
+      border-bottom: 1px solid #d6d6d6;
+      padding-bottom: 5px;
+      text-shadow: 0 1px 0 #fff;
+      font-size: 1.071em;
+      line-height: 1.2;
+      font-weight: inherit;
+    }
+  }
+
+  #sidebar-left {
+    width: 25%;
+    //margin-left: -100%;
+    float: left;
+    position: absolute;
+
+    .section {
+      padding: 10px 15px 0;
+    }
+  }
+}
+
+#block-search {
+  .form-actions {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 10px;
+  }
+
+  button {
+    .button.search-form__submit, .search-form__submit {
+      background: #f0f0f0 url(images/loupe.svg) no-repeat center;
+      cursor: pointer;
+      height: 26px;
+      margin-left: 0;
+      margin-right: 0;
+      overflow: hidden;
+      padding: 0;
+      text-indent: -9999px;
+      direction: ltr;
+      width: 34px;
+    }
+  }
+  #edit-actions {
+    display: inline;
+    button {
+      margin-right: 0.6em;
+      border-radius: 1em;
+      display: inline-block;
+      line-height: normal;
+      font-size: 0.929em;
+      font-weight: normal;
+      text-align: center;
+      border-bottom-color: #b4b4b4;
+      border-left-color: #d2d2d2;
+      border-right-color: #d2d2d2;
+      font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+      font-weight: normal;
+    }
+  }
+
+  .form-item {
+    display: inline;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+}
+
+#search-block-form {
+  #search_search {
+    background-color: #17a2b8;
+  }
+}

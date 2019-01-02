@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+{% import 'macros.html.twig' as macros %}
+
+{% block title %}{{ 'messages.user.register'|trans }} | BRT solutions{% endblock %}
+
+{% block content %}
+    <h1>{{ 'messages.user.register'|trans }}</h1>
+
+    {% include "components/tabs/log-in.html.twig" with {
+        type: 'register'
+    } %}
+
+    {{ form_start(form, {attr: {class: 'user-register-form user-form', id: 'user-register-form' }}) }}
+    <div class="form-item">
+        {{ form_label(form.email) }}
+        {{ macros.getFormElementErrorMessage(getFormElementErrorMessage(form.vars.errors.form.getErrors(true), 'data.email')) }}
+        {{ form_widget(form.email, {attr: {class: 'form-email required',
+            size: 60, maxlength:254, type: 'email'
+        }}) }}
+        {{ form_help(form.email) }}
+    </div>
+    <div class="form-item">
+        {{ form_label(form.username) }}
+        {{ macros.getFormElementErrorMessage(getFormElementErrorMessage(form.vars.errors.form.getErrors(true), 'data.username')) }}
+        {{ form_widget(form.username, {attr: {class: 'form-email required',
+            size: 60, maxlength:254, type: 'email'
+        }}) }}
+        {{ form_help(form.username) }}
+    </div>
+
+    {% if show_password %}
+        <div class="form-item">
+            {{ form_errors(form.plainPassword) }}
+            {{ form_widget(form.plainPassword, {attr: {class: 'form-password required',
+                size: 60, maxlength:254, type: 'email'
+            }}) }}
+        </div>
+    {% endif %}
+
+    <div id="edit-actions" class="form-actions">
+        {{ form_widget(form.submit, {attr: {class: 'form-submit button'}}) }}
+    </div>
+    {{ form_end(form) }}
+
+{% endblock %}

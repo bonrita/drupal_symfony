@@ -1,0 +1,65 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: 'en'
+    app.locales: en_GB|nl_NL
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: false       # Allows optimizing the container by removing unused services; this also means
+                            # fetching services directly from the container via $container->get() won't work.
+                            # The best practice is to be explicit about your dependencies anyway.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Domain/Migrations,Tests,Kernel.php,Domain/Entity }'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Web\Controller\:
+        resource: '../src/Web/Controller'
+        tags: ['controller.service_arguments']
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    App\Infrastructure\Security\Authentication\Provider\PasswordResetProvider:
+        arguments:
+            $userChecker: '@App\Infrastructure\Security\User\UserChecker'
+#            $providerKey: 'local_db_provider'
+        public: false
+
+    App\Infrastructure\Security\Firewall\PasswordResetListener:
+#        arguments:
+#            $providerKey: ''
+        calls:
+            - [setDoctrine, ['@doctrine']]
+        public: false
+
+    App\Domain\EventListener\Doctrine\Roles:
+        tags:
+        - { name: doctrine.event_listener, event: postLoad }
+
+    Dtc\GridBundle\Grid\Renderer\RendererFactory: '@dtc_grid.renderer.factory'
+#    Dtc\GridBundle\Manager\GridSourceManager: '@dtc_grid.manager.source'
+    App\Application\Overridden\Bundle\Dtc\CustomGridSourceManager: '@dtc_grid.manager.source'
+
+    Knp\Component\Pager\Paginator: '@knp_paginator'
+
+    App\Application\Message\Handler\:
+        resource: '../src/Application/Message/Handler'
+        tags: ['messenger.message_handler']
+
+#    App\Domain\User\UserRepository:
+#        class: App\Domain\User\UserRepository
+#        factory: ['@=service("doctrine").getManagerForClass("App\Domain\User\User")', getRepository]
+#        arguments: [App\Domain\User\User]`
+

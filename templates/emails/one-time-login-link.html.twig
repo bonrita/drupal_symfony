@@ -1,0 +1,17 @@
+<h3>One time login link</h3>
+
+<p>Hi {{ name }},</p>
+
+{# example, assuming you have a route named "login" #}
+<p>To login, go to: <a href="{{ url('user_page_reset_login', {
+        'user': hash_params.uid,
+        'timestamp': hash_params.timestamp,
+        'hash': hash_params.hash
+    }) }}">Login</a></p>.
+
+<p>Thanks!</p>
+
+<p>The login link is valid for 24 hours.</p>
+
+{# Makes an absolute URL to the /images/logo.png file #}
+<img src="{{ absolute_url(asset('images/logo.png')) }}">

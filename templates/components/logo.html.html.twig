@@ -1,0 +1,10 @@
+<div id="region-logo">
+    <div id="logo">
+        <a href="{{ path('home_page', {'_locale': app.request.attributes.get('_locale')}) }}" title="Home" rel="home" id="site-logo">
+            <img src="{{ asset('build/images/logo-2.jpg') }}" alt="Home">
+        </a>
+        <div class="branding-text">
+            <a href="{{ path('home_page', {'_locale': app.request.attributes.get('_locale')}) }}" title="{{ 'messages.home.home'|trans }}" rel="{{ 'messages.home.home'|trans }}">Drupal to Symfony</a>
+        </div>
+    </div>
+</div>

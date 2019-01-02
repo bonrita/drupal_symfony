@@ -1,0 +1,8 @@
+
+{% macro getFormElementErrorMessage(input) %}
+    {% if input %}
+        <ul class="error">
+            <li> {{ input }} </li>
+        </ul>
+    {% endif %}
+{% endmacro %}

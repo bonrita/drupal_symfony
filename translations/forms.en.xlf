@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="global">
+        <body>
+            <trans-unit id="search" resname="forms.search">
+                <source>Search</source>
+                <target>Search</target>
+            </trans-unit>
+            <trans-unit id="search_title" resname="forms.search.title">
+                <source>forms.search.title</source>
+                <target>Search</target>
+            </trans-unit>
+            <trans-unit id="email_label_address" resname="forms.email.label.address">
+                <source>Email address</source>
+                <target>Email address</target>
+            </trans-unit>
+            <trans-unit id="email_validation_message" resname="forms.email.validation.message">
+                <source>Please provide a valid email address.</source>
+                <target>Please provide a valid email address.</target>
+            </trans-unit>
+            <trans-unit id="username_label" resname="forms.username.label">
+                <source>Username</source>
+                <target>Username</target>
+            </trans-unit>
+            <trans-unit id="register_submit_label" resname="forms.register.submit.label">
+                <source>Create new account</source>
+                <target>Create new account</target>
+            </trans-unit>
+            <trans-unit id="register_email_help" resname="forms.register.email.help">
+                <source>A valid email address. All emails from the system will be sent to this address.
+                    The email address is not made public and will only be used if you wish to receive a new
+                    password or wish to receive certain news or notifications by email.</source>
+                <target>A valid email address. All emails from the system will be sent to this address.
+                    The email address is not made public and will only be used if you wish to receive a new
+                    password or wish to receive certain news or notifications by email.</target>
+            </trans-unit>
+            <trans-unit id="username_help" resname="forms.username.help">
+                <source>Several special characters are allowed, including space, period (.), hyphen (-),
+                    apostrophe ('), underscore (_), and the @ sign. </source>
+                <target>Several special characters are allowed, including space, period (.), hyphen (-),
+                    apostrophe ('), underscore (_), and the @ sign. </target>
+            </trans-unit>
+            <trans-unit id="user_password_label" resname="form.user.password.label">
+                <source>Password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="repeat_password_label" resname="form.repeat.password.label">
+                <source>Repeat Password</source>
+                <target>Repeat Password</target>
+            </trans-unit>
+            <trans-unit id="email_username_label" resname="forms.email_username.label">
+                <source>forms.email_username.label</source>
+                <target>Username or email address</target>
+            </trans-unit>
+            <trans-unit id="password_submit_label" resname="forms.password.submit.label">
+                <source>forms.password.submit.label</source>
+                <target>Submit</target>
+            </trans-unit>
+            <trans-unit id="password_request_error_message" resname="forms.request.password.error">
+                <source>forms.request.password.error</source>
+                <target>The provided credentials are not known by us.</target>
+            </trans-unit>
+            <trans-unit id="password_reset_success_message" resname="forms.password.reset.success.message">
+                <source>forms.password.reset.success.message</source>
+                <target>You have successfully reset your password. Please login again</target>
+            </trans-unit>
+            <trans-unit id="reset_password_submit_label" resname="forms.reset.password.submit.label">
+                <source>forms.reset.password.submit.label</source>
+                <target>Reset password</target>
+            </trans-unit>
+            <trans-unit id="email_username_help" resname="forms.email_username.help">
+                <source>forms.email_username.help</source>
+                <target>Password reset instructions will be sent to your registered email address.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

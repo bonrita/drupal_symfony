@@ -1,0 +1,12 @@
+<div id="primary-menu">
+    <nav role="navigation" id="menu-main" class="navigation">
+        <ul class="menu">
+            <li class="menu-item">
+                <a href="{{ path('home_page', {'_locale': app.request.attributes.get('_locale')}) }}">{{ 'messages.home.home'|trans }}</a>
+            </li>
+            <li class="menu-item">
+                <a href="/node/1">Test me</a>
+            </li>
+        </ul>
+    </nav>
+</div>

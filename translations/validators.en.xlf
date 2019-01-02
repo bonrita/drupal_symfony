@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="global">
+        <body>
+            <trans-unit id="user.email.unique" resname="validators.user.email.unique">
+                <source>validators.user.email.unique</source>
+                <target>There is already an account with the provided email.</target>
+            </trans-unit>
+            <trans-unit id="user.username.unique" resname="validators.user.username.unique">
+                <source>validators.user.username.unique</source>
+                <target>There is already an account with the provided name.</target>
+            </trans-unit>
+            <trans-unit id="user.password.no.match" resname="validators.user.password.no.match">
+                <source>validators.user.password.no.match</source>
+                <target>The passwords don't match.</target>
+            </trans-unit>
+            <trans-unit id="user.password.too.short" resname="validators.user.password.too.short">
+                <source>validators.user.password.too.short</source>
+                <target>This password is too short. It should have {{ limit }} characters or more.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

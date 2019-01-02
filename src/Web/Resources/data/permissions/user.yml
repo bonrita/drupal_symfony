@@ -1,0 +1,15 @@
+info:
+  title: User
+  description: For the user.
+permissions:
+  edit_own_profile:
+    title: 'Edit own profile'
+    description: Allow user to edit his own profile
+  administer_users:
+    title: 'Administer users'
+    description: 'Manage all user accounts. This includes editing all user information, changes of email addresses and passwords, issuing emails to users and blocking and deleting user accounts.'
+  cancel_account:
+    title: 'Cancel own user account'
+    description: 'Note: content may be kept, unpublished, deleted or transferred to the anonymous user depending on the configured user settings.'
+  access_user_profiles:
+    title: 'View user information'

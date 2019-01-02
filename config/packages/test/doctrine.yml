@@ -1,0 +1,4 @@
+doctrine:
+  dbal:
+    driver: 'pdo_mysql'
+    url: 'mysql://root@127.0.0.1:3306/drup_symf_test'

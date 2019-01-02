@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+{% import 'macros.html.twig' as macros %}
+
+{% block title %}{{ username }} | BRT solutions{% endblock %}
+
+{% block content %}
+    {% include "components/tabs/user.html.twig" with {
+        type: 'view',
+        user: user
+    } %}
+    <h1>{{ username|capitalize }}</h1>
+
+{% endblock %}

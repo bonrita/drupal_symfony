@@ -1,0 +1,7 @@
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link {{ type == 'people'? 'active' : '' }}" id="nav-login-tab" data-toggle="tab" href="{{ path('user_admin_people', {'_locale': app.request.attributes.get('_locale')}) }}" role="tab" aria-controls="nav-login" aria-selected="true">{{ 'People'|trans }}</a>
+        <a class="nav-item nav-link  {{ type == 'permissions'? 'active' : '' }}" id="nav-register-tab" data-toggle="tab" href="{{ path('user_admin_permissions', {'_locale': app.request.attributes.get('_locale')}) }}" role="tab" aria-controls="nav-profile" aria-selected="false">{{ 'Permissions'|trans }}</a>
+        <a class="nav-item nav-link {{ type == 'roles'? 'active' : '' }}" id="nav-reset-tab" data-toggle="tab" href="{{ path('user_admin_roles_list', {'_locale': app.request.attributes.get('_locale')}) }}" role="tab" aria-controls="nav-contact" aria-selected="false">{{ 'Roles'|trans }}</a>
+    </div>
+</nav>

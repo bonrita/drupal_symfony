@@ -1,0 +1,7 @@
+<div id="sidebar-left" class="sidebar">
+    <aside class="section">
+        {% block sidebar_left %}
+            {{ render(controller('App\\Controller\\SideBlocks::searchForm')) }}
+        {% endblock %}
+    </aside>
+</div>

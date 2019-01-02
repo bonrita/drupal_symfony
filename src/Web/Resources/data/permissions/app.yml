@@ -1,0 +1,7 @@
+
+info:
+  title: General
+  description: These are general permission.
+permissions:
+  administer_permissions:
+    title: Administer permissions

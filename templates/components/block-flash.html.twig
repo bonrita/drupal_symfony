@@ -1,0 +1,15 @@
+<div class="highlighted">
+    <aside class="layout-container section clearfix">
+        <div class="region region-highlighted">
+            <div class="messages__wrapper layout-container">
+                {% for label, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ label }}" role="alert">
+                            <strong>{{ label|capitalize }}!</strong> {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+    </aside>
+</div>

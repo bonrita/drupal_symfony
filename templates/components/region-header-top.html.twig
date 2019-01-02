@@ -1,0 +1,24 @@
+<div id="region-header-top">
+    <div id="language-switcher">
+        <ul class="menu">
+
+            {% for item in getLocales(locales) %}
+                <li class="menu-item">
+                    <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': item.lang})) }}">{{ item.lang|upper }}</a>
+                </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+    <div id="secondary-menu">
+        <ul class="menu">
+            <li class="menu-item">
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    <a href="/user/logout">Log out</a>
+                {% else %}
+                    <a href="{{ path('user_page_login', {'_locale': app.request.attributes.get('_locale')}) }}">Log in</a>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</div>

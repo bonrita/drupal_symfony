@@ -1,0 +1,11 @@
+#home_page:
+#    path: /
+#    controller: App\Controller\HomePageController::index
+
+public:
+  # loads routes from the PHP annotations of the controllers found in that directory
+  resource: '../src/Web/Controller/'
+  type:     annotation
+
+logout:
+  path: /user/logout

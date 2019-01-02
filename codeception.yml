@@ -1,0 +1,22 @@
+namespace: App\Tests
+paths:
+    tests: tests
+    output: tests/_output
+    data: tests/_data
+    support: tests/_support
+    envs: tests/_envs
+actor_suffix: Tester
+extensions:
+    enabled:
+        - Codeception\Extension\RunFailed
+params:
+    - .env
+modules:
+    config:
+        Db:
+            dsn: 'mysql:127.0.0.1; dbname=drup_symf'
+            user: 'root'
+            password: ''
+            dump: tests/_data/dump.sql
+            populate: true
+            cleaenup: false

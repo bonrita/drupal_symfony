@@ -1,0 +1,57 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: .docker/php/Dockerfile
+    ports:
+      - "18080:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - mariadb
+    links:
+      - mariadb:mariadb
+    env_file: .docker.env
+#    env_file:
+#      - .docker.env
+#      - .env
+
+  mariadb:
+    image: mariadb:10.1.21
+#    command: ["--default-authentication-plugin=mysql_native_password"]
+    ports:
+      - "13306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: pw
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pw
+
+      # https://github.com/DamienGilbrin/BehatMeetup/blob/master/docker-compose.yml
+      # https://www.grossum.com/blog/how-to-configure-test-environment-and-run-selenium-tests-using-docker
+      # https://github.com/SeleniumHQ/docker-selenium
+  selenium-hub:
+    image: selenium/hub:3.14.0-helium
+    container_name: selenium-hub
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+      - "4444:4444"
+    depends_on:
+      - app
+  chrome:
+    image: selenium/node-chrome:3.14.0-helium
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+
+  firefox:
+    image: selenium/node-firefox:3.14.0-helium
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
