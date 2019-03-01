@@ -24,7 +24,7 @@ security:
             passwordreset:
                 provider_key: local_db_provider
             pattern: ^/user/reset/\d+/*
-#            user_checker: App\Security\User\UserChecker
+            user_checker: App\Infrastructure\Security\User\UserChecker
 #            access_denied_handler: App\Security\Handler\AccessDeniedHandler
 
         main:

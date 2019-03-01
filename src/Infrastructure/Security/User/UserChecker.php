@@ -5,7 +5,7 @@ namespace App\Infrastructure\Security\User;
 
 use App\Domain\Entity\User;
 use App\Infrastructure\Security\Exception\PasswordResetException;
-use App\Infrastructure\Framework\Security\User\UserInterface as AppUserInterface;
+use App\Infrastructure\Security\User\UserInterface as AppUserInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Security\Core\Exception\AccountStatusException;
 use Symfony\Component\Security\Core\Exception\DisabledException;

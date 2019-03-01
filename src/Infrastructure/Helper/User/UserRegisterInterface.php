@@ -4,7 +4,7 @@ namespace App\Infrastructure\Helper\User;
 
 use App\Domain\Entity\User;
 use App\Infrastructure\Helper\EmailMessageInterface;
-use App\Services\Form\PasswordVisibility;
+use App\Infrastructure\Form\PasswordVisibility;
 use Doctrine\Common\Persistence\ObjectManager;
 use Twig\Environment;
 

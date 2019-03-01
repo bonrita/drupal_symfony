@@ -42,6 +42,10 @@
                 <source>messages.login.link.expired</source>
                 <target>One time login link expired.</target>
             </trans-unit>
+            <trans-unit id="form_save_label" resname="messages.form.save_label">
+                <source>Save</source>
+                <target>Save</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

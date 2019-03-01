@@ -1,8 +1,15 @@
 sonata_admin:
-    title: 'Sonata Admin'
+    title: 'Administration'
     dashboard:
         blocks:
             - { type: sonata.admin.block.admin_list, position: left }
+        groups:
+            users:
+                label: ~
+                label_catalogue: ~
+                items:
+                    - route: user_admin_people
+                      label: People.
 
 sonata_block:
     blocks:

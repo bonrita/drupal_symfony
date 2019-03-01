@@ -63,3 +63,6 @@ services:
 #        factory: ['@=service("doctrine").getManagerForClass("App\Domain\User\User")', getRepository]
 #        arguments: [App\Domain\User\User]`
 
+    App\Application\EventSubscriber\AccessDeniedSubscriber:
+        tags:
+            - {name: kernel.event_subscriber }

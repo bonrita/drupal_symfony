@@ -50,7 +50,7 @@ class Role extends CoreRole
     private $permissions;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $description;
 
@@ -68,8 +68,6 @@ class Role extends CoreRole
     {
         return $this->name;
     }
-
-
 
     /**
      * Add a User to the role

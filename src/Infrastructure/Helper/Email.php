@@ -38,12 +38,11 @@ class Email implements EmailInterface
     protected function generateMessage(EmailMessageInterface $message): \Swift_Mime_SimpleMessage
     {
         $from = $message->getUser()->getEmail()?:ini_get('sendmail_from');
-        return (new \Swift_Message($message->getSubject()))
+        return (new \Swift_Message($message->getSubject(),
+          $message->getBody()->getContent(),
+          $message->getContentType()))
             ->setFrom($from)
-            ->setTo($message->getUser()->getEmail())
-            ->setBody($message->getBody(),
-                $message->getContentType()
-            );
+            ->setTo($message->getUser()->getEmail());
     }
 
 }

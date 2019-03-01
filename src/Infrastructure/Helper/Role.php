@@ -23,6 +23,7 @@ class Role implements Rolelnterface
             $role = $this->objectManager->getRepository(EntityRole::class)->findOneBy(['name' => $roleName]);
             if (!$role) {
                 $role = new EntityRole($roleName);
+                $role->setTitle(ucfirst(strtolower(str_replace('ROLE_', '', $roleName))));
                 $this->objectManager->persist($role);
             }
 
