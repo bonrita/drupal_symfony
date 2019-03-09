@@ -66,3 +66,9 @@ services:
     App\Application\EventSubscriber\AccessDeniedSubscriber:
         tags:
             - {name: kernel.event_subscriber }
+
+    app.sonata.admin.user:
+        class: App\Web\Admin\UserAdmin
+        arguments: [~, App\Domain\Entity\User, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: messages.menu.people, group: administration }

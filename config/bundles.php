@@ -22,4 +22,5 @@ return [
     Sonata\AdminBundle\SonataAdminBundle::class => ['all' => true],
     Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle::class => ['all' => true],
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
+    Ajgl\Twig\Extension\SymfonyBundle\AjglBreakpointTwigExtensionBundle::class => ['all' => true],
 ];

@@ -1,4 +1,7 @@
 {
+    "ajgl/breakpoint-twig-extension": {
+        "version": "0.3.2"
+    },
     "behat/behat": {
         "version": "v3.5.0"
     },

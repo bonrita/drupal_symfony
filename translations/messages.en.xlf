@@ -46,6 +46,14 @@
                 <source>Save</source>
                 <target>Save</target>
             </trans-unit>
+            <trans-unit id="admin_label" resname="messages.admin.label">
+                <source>messages.admin.label</source>
+                <target>Administration</target>
+            </trans-unit>
+            <trans-unit id="menu_people" resname="messages.menu.people">
+                <source>messages.menu.people</source>
+                <target>Users</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
